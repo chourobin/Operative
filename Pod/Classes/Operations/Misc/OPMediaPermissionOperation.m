@@ -44,7 +44,9 @@
     
     _mediaType = [mediaType copy];
     
-    [self addCondition:[OPOperationConditionMutuallyExclusive alertPresentationExclusivity]];
+    // Temporarily: let's relax the alert presentation exclusivity as we're seeing a condition where
+    // multiple media operations are enqueued.
+    // [self addCondition:[OPOperationConditionMutuallyExclusive alertPresentationExclusivity]];
     
     return self;
 }
